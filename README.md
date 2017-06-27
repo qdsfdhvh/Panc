@@ -4,7 +4,7 @@
 
 # 感谢以下的开源项目及作者
 - [Cimoc](https://github.com/Arachnid-27/Cimoc)
-- [PracticalRecyclerView](https://github.com/ssseasonnn/PracticalRecyclerView/projects)
+- [PracticalRecyclerView](https://github.com/ssseasonnn/PracticalRecyclerView)
 - [SiteD](https://github.com/noear/SiteD)
 - [ButterKnife](https://github.com/JakeWharton/butterknife)
 - [GreenDAO](https://github.com/greenrobot/greenDAO)
