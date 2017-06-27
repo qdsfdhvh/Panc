@@ -1,9 +1,7 @@
 package org.seiko.panc.base;
 
 import android.view.View;
-
 import org.seiko.panc.base.mvp.IView;
-
 import java.lang.reflect.ParameterizedType;
 
 /**

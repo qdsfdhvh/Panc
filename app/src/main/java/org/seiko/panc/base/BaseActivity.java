@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
-
-import org.seiko.panc.App;
 import org.seiko.panc.R;
 import org.seiko.panc.base.mvp.IView;
 import butterknife.BindView;

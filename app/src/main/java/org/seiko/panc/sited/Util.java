@@ -78,6 +78,7 @@ class Util {
         }).subscribeOn(Schedulers.io());
     }
 
+    @SuppressWarnings("all")
     private static String getResponseBody(OkHttpClient client, Request request, String encode) throws NetworkErrorException {
         Response response = null;
         try {
@@ -129,7 +130,8 @@ class Util {
     static void log(String tag, String msg, Throwable tr) {
         Log.v(tag, msg, tr);
     }
-    
+
+
 
     /*生成MD5值*/
     static String md5(String code) {
