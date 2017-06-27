@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.seiko.panc.wiget.ScaleImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scaleType="fitStart"
+    android:adjustViewBounds="true"/><!--图片列表-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/recView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+
+    <!--android:scaleType="fitStart"-->
+    <!--android:adjustViewBounds="true"-->

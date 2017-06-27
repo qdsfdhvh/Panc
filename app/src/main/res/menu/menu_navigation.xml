@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_reader"
+            android:checkable="true"
+            android:icon="@drawable/ic_import_contacts_white_24dp"
+            android:title="浏览"/>
+        <item
+            android:id="@+id/drawer_sited"
+            android:checkable="true"
+            android:icon="@drawable/ic_extension_white_24dp"
+            android:title="插件"/>
+    </group>
+</menu>

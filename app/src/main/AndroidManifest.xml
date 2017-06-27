@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.seiko.panc">
+
+    <!--网络链接-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--读取写入-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="true">
+        <meta-data
+            android:name="org.seiko.panc.glide.CustomModule"
+            android:value="GlideModule"/>
+        <activity android:name=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar.TransparentStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--在线安装插件-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="sited"/>
+            </intent-filter>
+            <!--本地安装插件-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.sited"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:host="*" />
+                <data android:mimeType="*/*"/>
+                <data android:pathPattern=".*\\.sited"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.tag.TagActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.book.BookActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.book.BookDownActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.section.SectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.down.DownActivity"
+            android:screenOrientation="portrait"/>
+
+        <service android:name=".service.DownloadService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

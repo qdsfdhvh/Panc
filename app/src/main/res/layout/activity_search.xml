@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.seiko.panc.ui.search.SearchActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="false">
+        <include layout="@layout/custom_toolbar"/>
+        <FrameLayout
+            android:id="@+id/search_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="?attr/colorPrimary"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/search_text_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/search_hint"
+                android:textColorHint="@color/white"
+                app:counterEnabled="true"
+                app:theme="@style/TextInputTheme"
+                app:errorTextAppearance="@color/white">
+                <org.seiko.panc.wiget.ClearEditText
+                    android:id="@+id/search_keyword_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:completionThreshold="1"
+                    android:singleLine="true"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    tools:ignore="TextFields"/>
+            </android.support.design.widget.TextInputLayout>
+        </FrameLayout>
+        <include layout="@layout/custom_progress_bar" android:visibility="gone"/>
+        <include layout="@layout/custom_error_layout"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/search_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:src="@drawable/ic_search_white_24dp"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_anchor="@id/search_frame_layout"/>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//apply plugin: 'AndResGuard'
+ext {
+    setup = [compileSdk: 25,
+             buildTools: "25.0.3",
+             minSdk    : 22,
+             targetSdk : 25,
+             vcode     : 1,
+             vname     : "1.1.2"]
+    versions = [libSupport    : "25.3.1",
+                libButterKnife: "8.6.0",
+                libRxAndroid  : "2.0.1",
+                libRxJava     : "2.1.0",
+                libOkhttp     : "3.8.0"]
+}
+buildscript {
+    repositories {
+        maven { url 'https://maven.google.com' }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://maven.google.com' }
+    }
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

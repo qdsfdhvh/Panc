@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_down"
+        android:checkable="false"
+        android:orderInCategory="100"
+        android:title="下载"
+        android:icon="@drawable/ic_download_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_favorite"
+        android:checkable="false"
+        android:orderInCategory="100"
+        android:title="收藏"
+        android:icon="@drawable/ic_favorite_border_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_export"
+        android:checkable="false"
+        android:orderInCategory="100"
+        android:title="倒序"
+        android:icon="@drawable/ic_import_export_white_24dp"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_onweb"
+        android:checkable="false"
+        android:orderInCategory="100"
+        android:title="外部浏览器打开"
+        android:icon="@drawable/ic_language_white_24dp"
+        app:showAsAction="never"/>
+</menu>

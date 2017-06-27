@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion rootProject.setup.compileSdk
+    buildToolsVersion rootProject.setup.buildTools
+    defaultConfig {
+        applicationId "org.seiko.panc"
+        minSdkVersion rootProject.setup.minSdk
+        targetSdkVersion rootProject.setup.targetSdk
+        versionCode rootProject.setup.vcode
+        versionName rootProject.setup.vname
+        resConfigs "en", "zh"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:support-v13:$rootProject.versions.libSupport"
+    compile "com.android.support:appcompat-v7:$rootProject.versions.libSupport"
+    compile "com.android.support:design:$rootProject.versions.libSupport"
+    //
+    compile "com.jakewharton:butterknife:$rootProject.versions.libButterKnife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.versions.libButterKnife"
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.versions.libRxAndroid"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.versions.libRxJava"
+    compile "com.squareup.okhttp3:okhttp:$rootProject.versions.libOkhttp"
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    //
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.eclipsesource.j2v8:j2v8:3.1.6@aar'
+//    compile "com.eclipsesource.j2v8:j2v8:4.8.0@aar"
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+
+    testCompile 'junit:junit:4.12'
+}
