@@ -1,5 +1,3 @@
-<img src="./screenshot/icon.png">
-
 # 应用简介
 基于SiteD引擎的看漫画app，个人学习用。
 
